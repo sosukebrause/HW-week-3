@@ -12,3 +12,4 @@ function writePassword() {
 console.log("hello");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+console.log(tests);
