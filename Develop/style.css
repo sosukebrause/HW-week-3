@@ -42,6 +42,11 @@ header {
   padding: 30px 40px;
 }
 
+.card-header {
+  color: red;
+  text-align: center;
+}
+
 .card-header::after {
   content: " ";
   display: block;

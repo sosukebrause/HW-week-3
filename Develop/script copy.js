@@ -1,4 +1,54 @@
 // Assignment Code
+var chars = "abcdefghijklmnopqrstuvwxyz`123456789`!@#$%^&*_-/+?";
+console.log(chars.length);
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  if (password != undefined) {
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+  }
+}
+function generatePassword() {
+  var i = [];
+  for (let n = 0; n < 10; n++) {
+    i.push(Math.floor(Math.random() * 10));
+  }
+  console.log(i.join(""));
+}
+generatePassword();
+
+function generateTotal() {
+  var concat = "";
+  for (let n = 0; n < 10; n++) {
+    concat += Math.floor(Math.random() * 10);
+  }
+  console.log(concat);
+}
+generateTotal();
+
+// var charSet = [];
+// function generatePassword() {
+//   for (let n = 0; n < 10; n++) {
+//     Math.floor(Math.random() * 10);
+//   }
+// }
+// console.log(generatePassword());
+
+// Math.floor(Math.random() * 10);
+// function generatePassword() {
+
+//   for (let n = 0; n < 10; n++) {
+//     Math.floor(Math.random() * 10);
+//   }
+//   charSet.push(n);
+//   return characters;
+// }
+// generatePassword();
+
+// Assignment Code
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "1234567890";
@@ -25,6 +75,9 @@ function getPasswordOptions() {
   }
   if (isNaN(length) === true) {
     alert("must provide number for length");
+    return;
+  }
+  if (hasSpecialCharacters === true) {
     return;
   }
 
