@@ -27,6 +27,9 @@ function getPasswordOptions() {
     alert("must provide number for length");
     return;
   }
+  if (hasSpecialCharacters === true) {
+    return;
+  }
 
   var hasSpecialCharacters = confirm("Click OK to include special characters");
   var hasLowerCase = confirm("click ok to include lowercase letters");
