@@ -20,19 +20,29 @@ function generatePassword() {
   var character = [];
 
   var length = prompt("Enter the desired character length numerically");
+  if (length > 128 || length < 8) {
+    alert("must be more than 8 and less than 128");
+    return;
+  }
+  if (isNaN(length) === true) {
+    alert("must provide number for length");
+    return;
+  }
+
   var hasUpperCase = confirm("click ok to include uppercase letters");
   var hasLowerCase = confirm("click ok to include lowercase letters");
   var hasNumbers = confirm("Click OK to include numbers");
+  var hasSpecialCharacters = confirm("Click ok to include special characters");
 
   let validCharacters = [];
   if (hasUpperCase) {
-    validCharacters += upperCase;
+    validCharacters = validCharacters + upperCase;
   }
   if (hasLowerCase) {
-    validCharacters += lowerCase;
+    validCharacters = validCharacters + lowerCase;
   }
   if (hasNumbers) {
-    validCharacters += numbers;
+    validCharacters = validCharacters + numbers;
   }
 
   for (let n = 0; n < length; n++) {
